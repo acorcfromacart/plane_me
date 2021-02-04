@@ -1,0 +1,115 @@
+{
+  "project_info": {
+    "project_number": "970490362292",
+    "firebase_url": "https://planme-28964.firebaseio.com",
+    "project_id": "planme-28964",
+    "storage_bucket": "planme-28964.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970490362292:android:89b9b186ea631f1fc45ae1",
+        "android_client_info": {
+          "package_name": "com.fivetwozero.plane_me"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "970490362292-04fcv5g2dkfmolghtkrjb6eeehbsn2m0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fivetwozero.plane_me",
+            "certificate_hash": "59b605010b22360a41c32414f29b4269e6cc3326"
+          }
+        },
+        {
+          "client_id": "970490362292-9jmdkkst9r1uq7tqcg6mtdtrpbgftv8q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fivetwozero.plane_me",
+            "certificate_hash": "6d261cfada2f3168c545ff04ce4ad5e5bebd1dea"
+          }
+        },
+        {
+          "client_id": "970490362292-me0jdg8n6kdeufq7hue76rsns5v5onu8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fivetwozero.plane_me",
+            "certificate_hash": "999d26e8243cedd2e0cb961b6609a37fe4e3e583"
+          }
+        },
+        {
+          "client_id": "970490362292-jr812f7lmdbhf0o8sfr53k4egscnv0ft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5MjdyBi38X_jDCzAyUqklVCb0e17mlIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "970490362292-jr812f7lmdbhf0o8sfr53k4egscnv0ft.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "970490362292-o87o5jv6ujog5cm2287ctf0eej95pa0l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fivetwozero.planeMe"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970490362292:android:5e42e692a03911b1c45ae1",
+        "android_client_info": {
+          "package_name": "com.fivetwozero.planme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "970490362292-m00hlk4r2i3m9pqsq9gllsfposln04jj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fivetwozero.planme",
+            "certificate_hash": "f190ae33f12ba19b456cadfc80b5112293114e00"
+          }
+        },
+        {
+          "client_id": "970490362292-jr812f7lmdbhf0o8sfr53k4egscnv0ft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5MjdyBi38X_jDCzAyUqklVCb0e17mlIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "970490362292-jr812f7lmdbhf0o8sfr53k4egscnv0ft.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "970490362292-o87o5jv6ujog5cm2287ctf0eej95pa0l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fivetwozero.planeMe"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

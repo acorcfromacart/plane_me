@@ -1,0 +1,87 @@
+name: plane_me
+description: A new Flutter application.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  google_sign_in: ^4.5.9
+  firebase_auth: ^0.18.4+1
+  firebase_core: ^0.5.3
+  table_calendar: ^2.3.3
+  sliding_up_panel: ^1.0.2
+  flutter_map: ^0.10.1+1
+  flutter_spinkit: ^4.1.2
+  cloud_firestore: ^0.14.4
+  firebase_helpers: ^0.2.2
+  flutter_switch: ^0.2.0
+  date_format: ^1.0.9
+  curved_navigation_bar: ^0.1.26
+  toggle_switch: ^0.1.8
+  flutter_animated_dialog: ^1.2.0
+  font_awesome_flutter: ^8.11.0
+  intro_slider: ^2.3.3
+  shared_preferences: ^0.5.12+4
+  intl: ^0.16.1
+  charts_flutter: ^0.9.0
+  flutter_cache_manager: ^2.1.0
+  flutter_fadein: ^1.1.1
+  circular_check_box: ^1.0.4
+
+
+
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.0
+
+
+dependency_overrides:
+  intl: ^0.17.0-nullsafety.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - images/icon.png
+    - images/google_logo.png
+    - images/trash.gif
+    - images/connect_img.png
+    - images/update_img.png
+    - images/help_img.png
+    - images/empty.png
+    - images/archive_img.png
+    - lang/en.json
+    - lang/pt.json
+    - lang/es.json
+    - lang/fr.json
+    - lang/ko.json
+    - lang/ru.json
+
+
+  fonts:
+    - family: Pacifico
+      fonts:
+        - asset: fonts/Pacifico-Regular.ttf
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Montserrat-Light.ttf
+    - family: Ubuntu
+      fonts:
+        - asset: fonts/Ubuntu-Medium.ttf
+        - asset: fonts/Ubuntu-Light.ttf
