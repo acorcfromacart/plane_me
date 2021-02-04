@@ -1,6 +1,6 @@
 # plane_me
 
-A new Flutter application.
+A very beautiful note app completly developed in flutter.
 
 ## Getting Started
 
