@@ -10,7 +10,7 @@ class IntroScreen extends StatefulWidget {
 }
 
 class _IntroScreenState extends State<IntroScreen> {
-  List<Slide> slides = new List<Slide>.empty();
+  List<Slide> slides = new List();
 
   Function goToTab;
 
@@ -100,7 +100,7 @@ class _IntroScreenState extends State<IntroScreen> {
   }
 
   List<Widget> renderListCustomTabs() {
-    List<Widget> tabs = new List<Widget>.empty();
+    List<Widget> tabs = new List();
     for (int i = 0; i < slides.length; i++) {
       Slide currentSlide = slides[i];
       tabs.add(Container(

@@ -34,6 +34,7 @@ class _TodoScreenState extends State<TodoScreen> {
   final _formKey = GlobalKey<FormState>();
   final _key = GlobalKey<ScaffoldState>();
   TextEditingController _title = TextEditingController();
+  TextEditingController _description;
 
   final spinkit = SpinKitSquareCircle(
     color: Colors.white,
@@ -280,15 +281,13 @@ class _TodoScreenState extends State<TodoScreen> {
                       Icons.arrow_drop_down,
                       color: Colors.white,
                     ),
-                    onPressed: () {
+                    onPressed: (){
                       _pc.close();
                     },
                   ),
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
+              SizedBox(height: 20,),
               Container(
                 width: MediaQuery.of(context).size.width,
                 child: Row(
@@ -328,10 +327,12 @@ class _TodoScreenState extends State<TodoScreen> {
                       ),
                       onPressed: () {
                         if (_formKey.currentState.validate()) {
-                          TodoModel toDo =
-                              TodoModel(title: _title.text, done: false);
-
-                          eventTodo.createItem(toDo);
+                          eventTodo.createItem(
+                            TodoModel(
+                              title: _title.text,
+                              done: false,
+                            ),
+                          );
                           setState(() {
                             _title.clear();
                             readAllToDos().asStream();
@@ -430,10 +431,12 @@ class _TodoScreenState extends State<TodoScreen> {
                                     children: [
                                       ListTile(
                                           leading: CircularCheckBox(
+                                          
                                             value: document['done'],
                                             checkColor: Colors.black,
                                             activeColor:
                                                 Colors.deepOrangeAccent,
+                                                
                                           ),
                                           title: document['done'] == false
                                               ? Text(
@@ -477,7 +480,7 @@ class _TodoScreenState extends State<TodoScreen> {
                                             } else {
                                               final snackBar = SnackBar(
                                                   content: Text('Nota vazia'));
-                                              ScaffoldMessenger.of(context)
+                                              Scaffold.of(context)
                                                   .showSnackBar(snackBar);
                                             }
                                           }),
@@ -501,7 +504,7 @@ class _TodoScreenState extends State<TodoScreen> {
                         todoModelDelete
                             .removeItem(document.id)
                             .whenComplete(() {
-                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                          Scaffold.of(context).showSnackBar(snackBar);
                         });
                       });
                       return;

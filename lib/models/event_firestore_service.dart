@@ -23,7 +23,7 @@ DatabaseService<StatisticsModel> statisticsDelete =
     DatabaseService<StatisticsModel>('users/$userId/statistics',
         fromDS: (id, data) => StatisticsModel.fromDS(id, data),
         toMap: (event) => event.toMap());
-        
+
 DatabaseService<TodoModel> eventTodo = DatabaseService<TodoModel>(
     'users/$userId/ToDo',
     fromDS: (id, data) => TodoModel.fromDS(id, data),

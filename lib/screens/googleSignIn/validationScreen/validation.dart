@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:plane_me/IntroSlide/slide_screen.dart';
 import 'package:plane_me/models/auth.dart';
 import 'package:plane_me/models/user_notes.dart';
@@ -27,7 +28,6 @@ class _ValidationScreenState extends State<ValidationScreen>
         ),
       );
     }
-    return null;
   }
 
   @override

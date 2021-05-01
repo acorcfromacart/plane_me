@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -13,6 +14,7 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
+
 class MainScreen extends StatefulWidget {
   final EventModel note;
 
@@ -23,7 +25,15 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+
+  GlobalKey _bottomNavigationKey = GlobalKey();
   bool enableSwitch = false;
+
+  void _toggle() {
+    setState(() {
+      enableSwitch = !enableSwitch;
+    });
+  }
 
   CalendarController controller;
   Map<DateTime, List<dynamic>> _events;
@@ -41,6 +51,9 @@ class _MainScreenState extends State<MainScreen> {
   double _fabHeight;
   double _panelHeightOpen;
   double _panelHeightClosed = 0.0;
+
+
+  TextEditingController _timeController = TextEditingController();
 
   /// Implementing upload note to firebase
   TextEditingController _title;
@@ -397,8 +410,7 @@ class _MainScreenState extends State<MainScreen> {
                               cursorColor: Colors.white,
                               keyboardType: TextInputType.text,
                               decoration: new InputDecoration(
-                                  hintText: AppLocalizations.instance
-                                      .translate("hint_type_1"),
+                                  hintText: AppLocalizations.instance.translate("hint_type_1"),
                                   hintStyle:
                                       TextStyle(color: Colors.grey[800])),
                               style: TextStyle(
@@ -408,8 +420,8 @@ class _MainScreenState extends State<MainScreen> {
                                 fontWeight: FontWeight.normal,
                               ),
                               validator: (value) => (value.isEmpty)
-                                  ? AppLocalizations.instance
-                                      .translate("title_forget")
+                                  ? AppLocalizations.instance.translate("title_forget")
+
                                   : null,
                             ),
                           ),
@@ -422,8 +434,7 @@ class _MainScreenState extends State<MainScreen> {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 16.0),
                               child: Text(
-                                AppLocalizations.instance
-                                    .translate("description"),
+                                AppLocalizations.instance.translate("description"),
                                 style: TextStyle(color: Colors.grey),
                               ),
                             ),
@@ -437,8 +448,7 @@ class _MainScreenState extends State<MainScreen> {
                               cursorColor: Colors.black,
                               keyboardType: TextInputType.text,
                               decoration: new InputDecoration(
-                                  hintText: AppLocalizations.instance
-                                      .translate("hint_type_2"),
+                                  hintText: AppLocalizations.instance.translate("hint_type_2"),
                                   hintStyle:
                                       TextStyle(color: Colors.grey[800])),
                               style: TextStyle(
@@ -447,10 +457,8 @@ class _MainScreenState extends State<MainScreen> {
                                 fontFamily: 'Ubuntu',
                                 fontWeight: FontWeight.normal,
                               ),
-                              validator: (value) => (value.isEmpty)
-                                  ? AppLocalizations.instance
-                                      .translate("desc_forget")
-                                  : null,
+                              validator: (value) =>
+                                  (value.isEmpty) ? AppLocalizations.instance.translate("desc_forget") : null,
                             ),
                           ),
                           SizedBox(
@@ -474,12 +482,8 @@ class _MainScreenState extends State<MainScreen> {
                       child: Container(
                         width: MediaQuery.of(context).size.width,
                         height: 52,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.circular(15)),
-                          ),
+                        child: RaisedButton(
+                          color: Colors.white,
                           onPressed: () async {
                             if (_formKey.currentState.validate()) {
                               setState(() {
@@ -516,8 +520,12 @@ class _MainScreenState extends State<MainScreen> {
                               });
                             }
                           },
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
                           child: Text(
-                            AppLocalizations.instance.translate("save_note"),
+                            AppLocalizations.instance.translate("save_note")
+                            ,
                             style: TextStyle(color: Colors.black, fontSize: 18),
                           ),
                         ),
@@ -536,7 +544,8 @@ class _MainScreenState extends State<MainScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            AppLocalizations.instance.translate("saving"),
+            AppLocalizations.instance.translate("saving")
+            ,
             style: TextStyle(fontSize: 21, color: Colors.white),
           ),
           SizedBox(
@@ -682,7 +691,8 @@ class _MainScreenState extends State<MainScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppLocalizations.instance.translate("time"),
+                AppLocalizations.instance.translate("time")
+                ,
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   color: Colors.grey,
@@ -751,7 +761,8 @@ class _MainScreenState extends State<MainScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            AppLocalizations.instance.translate("share"),
+            AppLocalizations.instance.translate("share")
+            ,
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.grey,

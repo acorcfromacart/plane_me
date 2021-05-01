@@ -228,7 +228,7 @@ class _ArchivedNotesState extends State<ArchivedNotes> {
                                     .translate("delete_warning"),
                               ),
                               actions: [
-                                TextButton(
+                                FlatButton(
                                   child: Text(
                                     AppLocalizations.instance
                                         .translate("cancel"),
@@ -238,13 +238,14 @@ class _ArchivedNotesState extends State<ArchivedNotes> {
                                     Navigator.of(context).pop();
                                   },
                                 ),
-                                TextButton(
+                                FlatButton(
                                   child: Text(
                                     AppLocalizations.instance
                                         .translate("delete_forever"),
                                     style: TextStyle(color: Colors.red),
                                   ),
                                   onPressed: () {
+                                    // TODO: Delete the item from DB etc..
                                     setState(() {
                                       eventDelete
                                           .removeItem(document.id);
@@ -352,6 +353,7 @@ class _ArchivedNotesState extends State<ArchivedNotes> {
 
   @override
   void setState(fn) {
+    // TODO: implement setState
     super.setState(fn);
     retrieveTasks();
   }
