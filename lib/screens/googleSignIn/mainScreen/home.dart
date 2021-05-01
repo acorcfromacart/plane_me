@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:plane_me/archiveNotes/archived_notes.dart';
 import 'package:plane_me/profileScreen/profile_screen.dart';
 import 'package:plane_me/screens/googleSignIn/allNotesScreen/all_notes.dart';
 import 'package:plane_me/todoScreens/todo_list.dart';
