@@ -38,6 +38,7 @@ class _MainScreenState extends State<MainScreen> {
   bool processing;
 
   final double _initFabHeight = 140.0;
+  // ignore: unused_field
   double _fabHeight;
   double _panelHeightOpen;
   double _panelHeightClosed = 0.0;
@@ -73,7 +74,6 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     controller = CalendarController();
   }
@@ -494,6 +494,7 @@ class _MainScreenState extends State<MainScreen> {
                                     'shareable': checkedValue,
                                   });
                                 } else {
+                                  // ignore: deprecated_member_use
                                   eventDBS.createItem(
                                     EventModel(
                                         title: _title.text,
