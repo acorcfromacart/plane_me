@@ -61,10 +61,12 @@ class _SignInScreenState extends State<SignInScreen> {
                       width: MediaQuery.of(context).size.width,
                       height: 64,
                       child: InkWell(
-                        child: RaisedButton(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
-                              side: BorderSide(color: Colors.deepOrangeAccent)),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Color(0xffff7400),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(15)),
+                          ),
                           onPressed: () async {
                             /// Trying to login with Google
                             signInWithGoogle(context).then((result) {
@@ -74,8 +76,6 @@ class _SignInScreenState extends State<SignInScreen> {
                               }
                             });
                           },
-                          color: Color(0xffff7400),
-                          textColor: Colors.white,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
