@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:plane_me/models/user_notes.dart';
-import 'package:plane_me/screens/googleSignIn/validationScreen/validation.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 GoogleSignInAccount currentUser;
@@ -36,6 +35,7 @@ Future<String> signInWithGoogle(BuildContext context) async {
   } catch (error) {
     print('$error + Esse é o erro ao entrar com o Google');
   }
+  return null;
 }
 
 Future<String> checkingCurrentUser(BuildContext context) async {
@@ -56,6 +56,7 @@ Future<String> checkingCurrentUser(BuildContext context) async {
     }
   });
   googleSignIn.signInSilently();
+  return null;
 }
 
 Future<void> signOuWithGoogle(BuildContext context) async {
@@ -72,4 +73,5 @@ Future<User> getCurrentUser(BuildContext context) async {
       Navigator.pushReplacementNamed(context, '/signIn');
     });
   }
+  return null;
 }

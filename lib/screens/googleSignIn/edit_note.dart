@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:plane_me/models/event.dart';
 import 'package:plane_me/models/event_firestore_service.dart';
 import 'package:plane_me/translation/localizations.dart';
 

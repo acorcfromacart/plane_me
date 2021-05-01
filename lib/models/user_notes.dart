@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:plane_me/models/auth.dart';
 
@@ -18,7 +17,7 @@ Future<String> checkCredentials() async {
       if (doc.exists) {
         print('Usuário localizado no Firestore');
       } else {
-        Future.delayed(Duration(seconds: 5), (){
+        Future.delayed(Duration(seconds: 5), () {
           addUserToCollection();
         });
       }
@@ -26,6 +25,7 @@ Future<String> checkCredentials() async {
   } catch (e) {
     print('$e + ESSE É UM ERRO AO VERIFICAR AS CREDENCIAIS DO USUÁRIO');
   }
+  return null;
 }
 
 Future<String> checkStatisticExistence() async {
@@ -47,6 +47,7 @@ Future<String> checkStatisticExistence() async {
   } catch (e) {
     print(e.toString());
   }
+  return null;
 }
 
 Future<String> addStatisticsExistence() async {
@@ -54,21 +55,23 @@ Future<String> addStatisticsExistence() async {
     'created': 0,
     'done': 0,
   });
+  return null;
 }
 
 Future<String> addUserToCollection() async {
   firestore.collection('users').doc(userId).set({'userUid': userId});
+  return null;
 }
 
 Future<QuerySnapshot> readAllNotes() async {
-   Stream<QuerySnapshot> a = firestore
+  Stream<QuerySnapshot> a = firestore
       .doc('users/$userId')
       .collection('calendarEvents')
-      .where('archieve', isEqualTo: false).snapshots();
+      .where('archieve', isEqualTo: false)
+      .snapshots();
 
   return a.first;
 }
-
 
 Future<QuerySnapshot> readAllArchivedNotes() async {
   Stream<QuerySnapshot> a = firestore
@@ -79,7 +82,6 @@ Future<QuerySnapshot> readAllArchivedNotes() async {
   return a.first;
 }
 
-
 Future<String> countAllNotes() async {
   firestore
       .doc('users/$userId')
@@ -89,6 +91,7 @@ Future<String> countAllNotes() async {
       .listen((event) {
     active = event.docs.length;
   });
+  return null;
 }
 
 Future<String> doneNotes() async {
@@ -100,7 +103,7 @@ Future<String> doneNotes() async {
     querySnapshot.docs.forEach((element) {
       print(element.data());
 
-      if(element != null){
+      if (element != null) {
         done = element.data()['done'];
         created = element.data()['created'];
       } else {
@@ -109,4 +112,5 @@ Future<String> doneNotes() async {
       }
     });
   });
+  return null;
 }

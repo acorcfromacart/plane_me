@@ -16,8 +16,6 @@ class AllNotesScreen extends StatefulWidget {
 class _AllNotesScreenState extends State<AllNotesScreen> {
   var now = DateTime.now();
 
-  int _n = 0;
-
   topHeader() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
@@ -234,7 +232,7 @@ class _AllNotesScreenState extends State<AllNotesScreen> {
                                     .translate("confir_delete"),
                               ),
                               actions: [
-                                FlatButton(
+                                TextButton(
                                   child: Text(
                                     AppLocalizations.instance
                                         .translate("cancel"),
@@ -244,14 +242,13 @@ class _AllNotesScreenState extends State<AllNotesScreen> {
                                     Navigator.of(context).pop();
                                   },
                                 ),
-                                FlatButton(
+                                TextButton(
                                   child: Text(
                                     AppLocalizations.instance
                                         .translate("delete"),
                                     style: TextStyle(color: Colors.red),
                                   ),
                                   onPressed: () {
-                                    // TODO: Delete the item from DB etc..
                                     setState(() {
                                       eventDelete
                                           .removeItem(document.id)
