@@ -430,6 +430,7 @@ class _TodoScreenState extends State<TodoScreen> {
                                     children: [
                                       ListTile(
                                           leading: CircularCheckBox(
+                                            onChanged: null,
                                             value: document['done'],
                                             checkColor: Colors.black,
                                             activeColor:
