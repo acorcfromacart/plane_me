@@ -312,7 +312,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   void initState() {
     super.initState();
-    _seriesData = List<charts.Series<Pollution, String>>();
+    _seriesData = [];
     _generateDate();
     doneNotes();
   }
