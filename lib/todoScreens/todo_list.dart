@@ -27,6 +27,7 @@ class _TodoScreenState extends State<TodoScreen> {
   bool processing;
 
   final double _initFabHeight = 140.0;
+  // ignore: unused_field
   double _fabHeight;
   double _panelHeightOpen;
   double _panelHeightClosed = 0.0;
@@ -331,6 +332,7 @@ class _TodoScreenState extends State<TodoScreen> {
                           TodoModel toDo =
                               TodoModel(title: _title.text, done: false);
 
+                          // ignore: deprecated_member_use
                           eventTodo.createItem(toDo);
                           setState(() {
                             _title.clear();
